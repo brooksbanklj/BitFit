@@ -25,12 +25,16 @@ public class HeartRateTracker {
    		 
    		 currentRate = this.measureHeartRate();
    		 
-   		 // add current rate to daily list of rates
-   		 heartRates.add(currentRate);
-   		 
-   	 }
+		// add current rate to daily list of rates
+		this.updateRates(currentRate);
+			
+		}
 
-    }
+	}
+	
+	public static void updateRates(int rate) {
+		heartRates.add(rate);
+	}
     
     // gets current hr from sensor
     public static int measureHeartRate() {
